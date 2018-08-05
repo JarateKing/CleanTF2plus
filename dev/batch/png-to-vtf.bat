@@ -1,1 +1,1 @@
-..\VTFCmd.exe -file test.png -format "abgr8888"
+..\VTFCmd.exe -file %1 -format "abgr8888"

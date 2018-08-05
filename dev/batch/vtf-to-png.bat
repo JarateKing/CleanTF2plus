@@ -1,1 +1,1 @@
-..\VTFCmd.exe -file test.vtf -exportformat "png"
+..\VTFCmd.exe -file %1 -exportformat "png"

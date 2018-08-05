@@ -1,1 +1,1 @@
-..\VTFCmd.exe -file %1 -exportformat "png"
+dev\VTFCmd.exe -file %1 -exportformat "png"

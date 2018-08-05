@@ -1,1 +1,1 @@
-..\VTFCmd.exe -file %1 -format "abgr8888"
+dev\VTFCmd.exe -file %1 -format "abgr8888"

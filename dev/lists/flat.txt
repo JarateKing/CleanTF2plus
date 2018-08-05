@@ -1,2 +1,2 @@
-materials/brick/*
-materials/concrete/*
+materials\brick\*
+materials\concrete\*

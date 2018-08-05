@@ -1,0 +1,1 @@
+..\VTFCmd.exe -file test.vtf -exportformat "png"

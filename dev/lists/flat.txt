@@ -1,2 +1,10 @@
 materials\brick
 materials\concrete
+materials\overlays\detail001.vtf
+materials\overlays\detail001_360.vtf
+materials\overlays\detail002.vtf
+materials\overlays\detail003.vtf
+materials\overlays\detail004.vtf
+materials\overlays\detail005.vtf
+materials\overlays\detail006.vtf
+materials\overlays\detail007.vtf

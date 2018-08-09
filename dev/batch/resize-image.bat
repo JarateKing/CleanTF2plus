@@ -1,0 +1,1 @@
+dev\magick.exe convert %1 -resize 1x1 -resize 1x1 %1

@@ -7,6 +7,7 @@ for /F "tokens=*" %%A in (dev\lists\flat.txt) do (
 		dev\batch\vtf-to-tga.bat %%A
 		for %%f in (%%A\..\*.tga) do (
 			dev\batch\average-color.bat %%f
+			dev\batch\resize-image.bat %%f
 			dev\batch\tga-to-vtf.bat %%f
 			del %%f
 		)
@@ -16,6 +17,7 @@ for /F "tokens=*" %%A in (dev\lists\flat.txt) do (
 		for %%f in (%%A\*.vtf) do dev\batch\vtf-to-tga.bat %%f
 		for %%f in (%%A\*.tga) do (
 			dev\batch\average-color.bat %%f
+			dev\batch\resize-image.bat %%f
 			dev\batch\tga-to-vtf.bat %%f
 			del %%f
 		)

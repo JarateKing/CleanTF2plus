@@ -1,2 +1,2 @@
 materials\overlays\drain001.vtf
-materials\signs\target_practice_overlay.vtf
+materials\signs\target_practice_sheet.vtf

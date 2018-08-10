@@ -12,3 +12,5 @@ materials\glass
 materials\metal
 materials\coalmines
 materials\nature
+materials\tile
+materials\wood

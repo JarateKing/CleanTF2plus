@@ -1,1 +1,2 @@
-dev\magick.exe convert %1 -resize 1x1 -resize 1x1 %1
+SET SIZE=%2
+dev\magick.exe convert %1 -resize %SIZE%x%SIZE% %1

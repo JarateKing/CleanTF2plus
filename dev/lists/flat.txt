@@ -9,3 +9,6 @@ materials\overlays\detail005.vtf
 materials\overlays\detail006.vtf
 materials\overlays\detail007.vtf
 materials\glass
+materials\metal
+materials\coalmines
+materials\nature

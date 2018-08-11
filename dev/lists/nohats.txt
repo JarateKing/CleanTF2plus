@@ -8,3 +8,13 @@ models\player\items\scout
 models\player\items\sniper
 models\player\items\soldier
 models\player\items\spy
+models\workshop\player\items\all_class
+models\workshop\player\items\demo
+models\workshop\player\items\engineer
+models\workshop\player\items\heavy
+models\workshop\player\items\medic
+models\workshop\player\items\pyro
+models\workshop\player\items\scout
+models\workshop\player\items\sniper
+models\workshop\player\items\soldier
+models\workshop\player\items\spy

@@ -19,3 +19,4 @@ models\workshop\player\items\sniper
 models\workshop\player\items\soldier
 models\workshop\player\items\spy
 models\workshop_partner\player\items\all_class
+models\player\items\mvm_loot

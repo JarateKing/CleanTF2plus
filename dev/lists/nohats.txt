@@ -1,1 +1,10 @@
 models\player\items\all_class
+models\player\items\demo
+models\player\items\engineer
+models\player\items\heavy
+models\player\items\medic
+models\player\items\pyro
+models\player\items\scout
+models\player\items\sniper
+models\player\items\soldier
+models\player\items\spy

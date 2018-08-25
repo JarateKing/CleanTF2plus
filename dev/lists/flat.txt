@@ -1,5 +1,7 @@
 materials\brick
 materials\concrete
+materials\overlays\concrete_track_overlay001.vtf
+materials\overlays\concrete_track_overlay002.vtf
 materials\overlays\detail001.vtf
 materials\overlays\detail001_360.vtf
 materials\overlays\detail002.vtf
@@ -8,6 +10,19 @@ materials\overlays\detail004.vtf
 materials\overlays\detail005.vtf
 materials\overlays\detail006.vtf
 materials\overlays\detail007.vtf
+materials\overlays\dirtroad001.vtf
+materials\overlays\dirtroad001_sm.vtf
+materials\overlays\dirtroad001e.vtf
+materials\overlays\dirtroad003.vtf
+materials\overlays\dirtroad004.vtf
+materials\overlays\dirtroad004b.vtf
+materials\overlays\dirtroad005.vtf
+materials\overlays\dirtroad008.vtf
+materials\overlays\dirtroad008end.vtf
+materials\overlays\island_poster_saxton_tall01.vtf
+materials\overlays\island_poster_yeti_fight_selection01.vtf
+materials\overlays\island_poster_yeti_tall01.vtf
+materials\overlays\stripe_red.vtf
 materials\glass
 materials\metal
 materials\coalmines

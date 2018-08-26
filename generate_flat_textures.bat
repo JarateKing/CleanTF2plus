@@ -21,5 +21,6 @@ for /F "tokens=*" %%A in (dev\lists\flat.txt) do (
 			dev\batch\tga-to-vtf.bat %%f
 			del %%f
 		)
+		for /d %%d in (%%A\*) do rmdir /s /q %%d
 	)
 )

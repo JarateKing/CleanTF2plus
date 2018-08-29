@@ -5,7 +5,7 @@ for /F "tokens=*" %%A in (%1) do (
 		call dev\batch\vtf-to-tga.bat %%A
 		for %%f in (%%A\..\*.tga) do (
 			call dev\batch\average-color.bat %%f
-			call dev\batch\resize-image.bat %%f 1
+			if NOT "%~3"=="" call dev\batch\resize-image.bat %%f %3
 			call dev\batch\tga-to-vtf.bat %%f
 			del %%f
 		)
@@ -15,7 +15,7 @@ for /F "tokens=*" %%A in (%1) do (
 		for %%f in (%%A\*.vtf) do call dev\batch\vtf-to-tga.bat %%f
 		for %%f in (%%A\*.tga) do (
 			call dev\batch\average-color.bat %%f
-			call dev\batch\resize-image.bat %%f 1
+			if NOT "%~3"=="" call dev\batch\resize-image.bat %%f %3
 			call dev\batch\tga-to-vtf.bat %%f
 			del %%f
 		)

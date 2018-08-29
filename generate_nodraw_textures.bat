@@ -19,5 +19,6 @@ for /F "tokens=*" %%A in (dev\lists\nodraw.txt) do (
 			call dev\batch\tga-to-vtf.bat %%f
 			del %%f
 		)
+		for /d %%d in (%%A\*) do rmdir /s /q %%d
 	)
 )

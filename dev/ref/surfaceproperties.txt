@@ -20,7 +20,7 @@
 	"scrapeRoughThreshold" "0.5"
 	"impactHardThreshold" "0.5"
 
-	"gamematerial"	"C"
+	"gamematerial"	"-"
 	"jumpfactor" "1.0"
 	"maxspeedfactor" "1.0"
 	"climbable"	"0"

@@ -5,8 +5,8 @@
 	"friction"	"0.8"
 	"dampening"	"0.0"
 
-	"stepleft"	""
-	"stepright"	""
+	"stepleft"	"REPLACEME"
+	"stepright"	"REPLACEME"
 	"bulletimpact"	""
 	"scraperough"	""
 	"scrapesmooth"	""

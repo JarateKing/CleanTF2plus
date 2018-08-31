@@ -2,3 +2,4 @@ call generate_flat_textures.bat
 call generate_model_removal.bat
 call generate_nodraw_textures.bat
 call generate_nohats.bat
+call generate_scripts.bat

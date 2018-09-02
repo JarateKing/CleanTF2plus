@@ -1,1 +1,0 @@
-call dev\generators\models_null.bat dev\lists\modelremoval.txt

@@ -1,1 +1,0 @@
-call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt

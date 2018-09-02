@@ -9,6 +9,8 @@ goto :FLAT
 
 :FLAT_GEN
 echo generating flat textures
+call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk" 1
+call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk" 1
 goto :OVERLAY
 
 :OVERLAY
@@ -20,6 +22,7 @@ goto :OVERLAY
 
 :OVERLAY_GEN
 echo removing overlay materials
+call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
 goto :NOHATS
 
 :NOHATS
@@ -31,6 +34,7 @@ goto :NOHATS
 
 :NOHATS_GEN
 echo removing overlay materials
+call dev\generators\models_null.bat dev\lists\nohats.txt
 goto :MODELS
 
 :MODELS
@@ -42,6 +46,7 @@ goto :MODELS
 
 :MODELS_GEN
 echo removing overlay materials
+call dev\generators\models_null.bat dev\lists\modelremoval.txt
 goto :SCRIPTS
 
 :SCRIPTS
@@ -53,6 +58,10 @@ goto :SCRIPTS
 
 :SCRIPTS_GEN
 echo removing overlay materials
+call dev\generators\scripts_copy.bat extra_models.txt
+call dev\generators\scripts_copy.bat soundscapes_manifest.txt
+call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
+call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "
 goto :END
 
 :END

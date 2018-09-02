@@ -23,6 +23,7 @@ goto :OVERLAY
 :OVERLAY_GEN
 echo removing overlay materials
 call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
+call dev\generators\scripts_copy.bat extra_models.txt
 goto :NOHATS
 
 :NOHATS
@@ -58,7 +59,6 @@ goto :SCRIPTS
 
 :SCRIPTS_GEN
 echo adding scripts
-call dev\generators\scripts_copy.bat extra_models.txt
 call dev\generators\scripts_copy.bat soundscapes_manifest.txt
 call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "

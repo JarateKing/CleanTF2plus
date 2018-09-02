@@ -1,10 +1,10 @@
 @ECHO OFF
 
 :FLAT
-set /P c=would you like flat materials? Y/N
+set /P c=would you like flat materials? Y/N/Help     
 if /I "%c%" EQU "Y" goto :FLAT_GEN
 if /I "%c%" EQU "N" goto :OVERLAY
-echo invalid input
+if /I "%c%" EQU "HELP" (echo flat materials make all world textures one solid color, also known as quake textures) else (echo invalid input)
 goto :FLAT
 
 :FLAT_GEN
@@ -14,10 +14,10 @@ call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_t
 goto :OVERLAY
 
 :OVERLAY
-set /P c=would you like to remove overlay materials? Y/N
+set /P c=would you like to remove overlay materials? Y/N/Help     
 if /I "%c%" EQU "Y" goto :OVERLAY_GEN
 if /I "%c%" EQU "N" goto :NOHATS
-echo invalid input
+if /I "%c%" EQU "HELP" (echo this removes materials that get overlayed on the world) else (echo invalid input)
 goto :OVERLAY
 
 :OVERLAY_GEN
@@ -27,10 +27,10 @@ call dev\generators\scripts_copy.bat extra_models.txt
 goto :NOHATS
 
 :NOHATS
-set /P c=would you like to remove hats? Y/N
+set /P c=would you like to remove hats? Y/N/Help     
 if /I "%c%" EQU "Y" goto :NOHATS_GEN
 if /I "%c%" EQU "N" goto :MODELS
-echo invalid input
+if /I "%c%" EQU "HELP" (echo this removes all hats and cosmetics from players) else (echo invalid input)
 goto :NOHATS
 
 :NOHATS_GEN
@@ -39,10 +39,10 @@ call dev\generators\models_null.bat dev\lists\nohats.txt
 goto :MODELS
 
 :MODELS
-set /P c=would you like to remove non-essential models? Y/N
+set /P c=would you like to remove non-essential models? Y/N/Help     
 if /I "%c%" EQU "Y" goto :MODELS_GEN
 if /I "%c%" EQU "N" goto :SURFACEPROPERTIES
-echo invalid input
+if /I "%c%" EQU "HELP" (echo this removes small, unnecessary or comsetic models on the map) else (echo invalid input)
 goto :MODELS
 
 :MODELS_GEN
@@ -51,11 +51,11 @@ call dev\generators\models_null.bat dev\lists\modelremoval.txt
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES
-set /P c=would you like to remove surfaceproperties? Y/N
+set /P c=would you like to add surfaceproperties? Y/N/Help     
 if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN
 if /I "%c%" EQU "N" goto :SOUNDSCAPES
-echo invalid input
-goto :SURFACEPROPERTIES_GEN
+if /I "%c%" EQU "HELP" (echo this removes bullet impacts and sets all footstep sounds to be the same) else (echo invalid input)
+goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES_GEN
 echo adding surfaceproperties
@@ -64,10 +64,10 @@ call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEM
 goto :SOUNDSCAPES
 
 :SOUNDSCAPES
-set /P c=would you like to remove soundscapes? Y/N
+set /P c=would you like to remove soundscapes? Y/N/Help     
 if /I "%c%" EQU "Y" goto :SOUNDSCAPES_GEN
 if /I "%c%" EQU "N" goto :END
-echo invalid input
+if /I "%c%" EQU "HELP" (echo this removes many world sounds from maps) else (echo invalid input)
 goto :SOUNDSCAPES
 
 :SOUNDSCAPES_GEN

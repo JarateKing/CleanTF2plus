@@ -41,19 +41,19 @@ goto :MODELS
 :MODELS
 set /P c=would you like to remove non-essential models? Y/N
 if /I "%c%" EQU "Y" goto :MODELS_GEN
-if /I "%c%" EQU "N" goto :SCRIPTS
+if /I "%c%" EQU "N" goto :SURFACEPROPERTIES
 echo invalid input
 goto :MODELS
 
 :MODELS_GEN
 echo removing non-essential models
 call dev\generators\models_null.bat dev\lists\modelremoval.txt
-goto :SCRIPTS
+goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES
 set /P c=would you like to remove surfaceproperties? Y/N
-if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN_GEN
-if /I "%c%" EQU "N" goto :END
+if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN
+if /I "%c%" EQU "N" goto :SOUNDSCAPES
 echo invalid input
 goto :SURFACEPROPERTIES_GEN
 
@@ -65,7 +65,7 @@ goto :SOUNDSCAPES
 
 :SOUNDSCAPES
 set /P c=would you like to remove soundscapes? Y/N
-if /I "%c%" EQU "Y" goto :SOUNDSCAPES
+if /I "%c%" EQU "Y" goto :SOUNDSCAPES_GEN
 if /I "%c%" EQU "N" goto :END
 echo invalid input
 goto :SOUNDSCAPES

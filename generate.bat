@@ -50,18 +50,29 @@ echo removing non-essential models
 call dev\generators\models_null.bat dev\lists\modelremoval.txt
 goto :SCRIPTS
 
-:SCRIPTS
-set /P c=would you like to add some cleanliness scripts? Y/N
-if /I "%c%" EQU "Y" goto :SCRIPTS_GEN
+:SURFACEPROPERTIES
+set /P c=would you like to remove surfaceproperties? Y/N
+if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN_GEN
 if /I "%c%" EQU "N" goto :END
 echo invalid input
-goto :SCRIPTS
+goto :SURFACEPROPERTIES_GEN
 
-:SCRIPTS_GEN
-echo adding scripts
-call dev\generators\scripts_copy.bat soundscapes_manifest.txt
+:SURFACEPROPERTIES_GEN
+echo adding surfaceproperties
 call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "
+goto :SOUNDSCAPES
+
+:SOUNDSCAPES
+set /P c=would you like to remove soundscapes? Y/N
+if /I "%c%" EQU "Y" goto :SOUNDSCAPES
+if /I "%c%" EQU "N" goto :END
+echo invalid input
+goto :SOUNDSCAPES
+
+:SOUNDSCAPES_GEN
+echo removing soundscapes
+call dev\generators\scripts_copy.bat soundscapes_manifest.txt
 goto :END
 
 :END

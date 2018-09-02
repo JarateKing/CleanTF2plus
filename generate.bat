@@ -33,7 +33,7 @@ echo invalid input
 goto :NOHATS
 
 :NOHATS_GEN
-echo removing overlay materials
+echo removing hats
 call dev\generators\models_null.bat dev\lists\nohats.txt
 goto :MODELS
 
@@ -45,7 +45,7 @@ echo invalid input
 goto :MODELS
 
 :MODELS_GEN
-echo removing overlay materials
+echo removing non-essential models
 call dev\generators\models_null.bat dev\lists\modelremoval.txt
 goto :SCRIPTS
 
@@ -57,7 +57,7 @@ echo invalid input
 goto :SCRIPTS
 
 :SCRIPTS_GEN
-echo removing overlay materials
+echo adding scripts
 call dev\generators\scripts_copy.bat extra_models.txt
 call dev\generators\scripts_copy.bat soundscapes_manifest.txt
 call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt

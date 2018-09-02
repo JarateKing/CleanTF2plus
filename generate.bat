@@ -1,3 +1,5 @@
+@ECHO OFF
+
 :FLAT
 set /P c=would you like flat materials? Y/N
 if /I "%c%" EQU "Y" goto :FLAT_GEN

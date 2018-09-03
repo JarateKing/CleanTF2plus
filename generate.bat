@@ -8,6 +8,19 @@ if /I "%c%" EQU "HELP" (echo flat materials make all world textures one solid co
 goto :FLAT
 
 :FLAT_GEN
+set /P c=would you like flat textures resized? Y/N/Help     
+if /I "%c%" EQU "Y" goto :FLAT_GEN_RESIZED
+if /I "%c%" EQU "N" goto :FLAT_GEN_STANDARD
+if /I "%c%" EQU "HELP" (echo resized flat textures causes grainyness on sv_pure, non-resized appears as stock tf2 textures) else (echo invalid input)
+goto :FLAT_GEN
+
+:FLAT_GEN_STANDARD
+echo generating flat textures
+call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk"
+call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk"
+goto :OVERLAY
+
+:FLAT_GEN_RESIZED
 echo generating flat textures
 call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk" 1
 call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk" 1

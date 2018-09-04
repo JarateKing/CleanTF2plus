@@ -36,7 +36,6 @@ goto :OVERLAY
 :OVERLAY_GEN
 echo removing overlay materials
 call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
-call dev\generators\scripts_copy.bat extra_models.txt
 goto :NOHATS
 
 :NOHATS
@@ -61,6 +60,7 @@ goto :MODELS
 :MODELS_GEN
 echo removing non-essential models
 call dev\generators\models_null.bat dev\lists\modelremoval.txt
+call dev\generators\scripts_copy.bat extra_models.txt
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES

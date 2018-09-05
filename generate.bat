@@ -42,25 +42,25 @@ goto :NOHATS
 :NOHATS
 set /P c=would you like to remove hats? Y/N/Help     
 if /I "%c%" EQU "Y" goto :NOHATS_GEN
-if /I "%c%" EQU "N" goto :MODELS
+if /I "%c%" EQU "N" goto :SHELLS
 if /I "%c%" EQU "HELP" (echo this removes all hats and cosmetics from players) else (echo invalid input)
 goto :NOHATS
 
 :NOHATS_GEN
 echo removing hats
 call dev\generators\models_null.bat dev\lists\nohats.txt
-goto :MODELS
+goto :SHELLS
 
-:MODELS
-set /P c=would you like to remove non-essential models? Y/N/Help     
-if /I "%c%" EQU "Y" goto :MODELS_GEN
+:SHELLS
+set /P c=would you like to remove shells from guns? Y/N/Help     
+if /I "%c%" EQU "Y" goto :SHELLS_GEN
 if /I "%c%" EQU "N" goto :SURFACEPROPERTIES
 if /I "%c%" EQU "HELP" (echo this removes small, unnecessary or comsetic models on the map) else (echo invalid input)
 goto :MODELS
 
-:MODELS_GEN
-echo removing non-essential models
-call dev\generators\models_null.bat dev\lists\modelremoval.txt
+:SHELLS_GEN
+echo removing shell models
+call dev\generators\models_null.bat dev\lists\shell_removal.txt
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES

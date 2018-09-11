@@ -71,6 +71,19 @@ if /I "%c%" EQU "HELP" (echo this removes bullet impacts and sets all footstep s
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES_GEN
+set /P c=would you want there to be footstep sounds or no sounds? Y/N/Help     
+if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN_METAL
+if /I "%c%" EQU "N" goto :SURFACEPROPERTIES_GEN_NOSTEPS
+if /I "%c%" EQU "HELP" (echo choosing yes will let there be metal footstep sounds on all materials, otherwise there will be no footstep sounds) else (echo invalid input)
+goto :SURFACEPROPERTIES_GEN
+
+:SURFACEPROPERTIES_GEN_METAL
+echo adding surfaceproperties
+call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
+call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" "SolidMetal.StepLeft"
+goto :SOUNDSCAPES
+
+:SURFACEPROPERTIES_GEN_NOSTEPS
 echo adding surfaceproperties
 call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "

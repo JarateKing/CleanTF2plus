@@ -1,1 +1,1 @@
-dev\magick.exe convert %1 -alpha on -channel a -evaluate set 0%% %1
+dev\convert.exe %1 -alpha on -channel a -evaluate set 0%% %1

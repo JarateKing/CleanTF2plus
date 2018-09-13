@@ -36,31 +36,31 @@ goto :OVERLAY
 :OVERLAY_GEN
 echo removing overlay materials
 call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
+call dev\generators\scripts_copy.bat extra_models.txt
 goto :NOHATS
 
 :NOHATS
 set /P c=would you like to remove hats? Y/N/Help     
 if /I "%c%" EQU "Y" goto :NOHATS_GEN
-if /I "%c%" EQU "N" goto :MODELS
+if /I "%c%" EQU "N" goto :SHELLS
 if /I "%c%" EQU "HELP" (echo this removes all hats and cosmetics from players) else (echo invalid input)
 goto :NOHATS
 
 :NOHATS_GEN
 echo removing hats
 call dev\generators\models_null.bat dev\lists\nohats.txt
-goto :MODELS
+goto :SHELLS
 
-:MODELS
-set /P c=would you like to remove non-essential models? Y/N/Help     
-if /I "%c%" EQU "Y" goto :MODELS_GEN
+:SHELLS
+set /P c=would you like to remove shells from guns? Y/N/Help     
+if /I "%c%" EQU "Y" goto :SHELLS_GEN
 if /I "%c%" EQU "N" goto :SURFACEPROPERTIES
-if /I "%c%" EQU "HELP" (echo this removes small, unnecessary or comsetic models on the map) else (echo invalid input)
+if /I "%c%" EQU "HELP" (echo this removes the shells that are ejected from some guns) else (echo invalid input)
 goto :MODELS
 
-:MODELS_GEN
-echo removing non-essential models
-call dev\generators\models_null.bat dev\lists\modelremoval.txt
-call dev\generators\scripts_copy.bat extra_models.txt
+:SHELLS_GEN
+echo removing shell models
+call dev\generators\models_null.bat dev\lists\shell_removal.txt
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES
@@ -71,6 +71,19 @@ if /I "%c%" EQU "HELP" (echo this removes bullet impacts and sets all footstep s
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES_GEN
+set /P c=would you want there to be footstep sounds or no sounds? Y/N/Help     
+if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN_METAL
+if /I "%c%" EQU "N" goto :SURFACEPROPERTIES_GEN_NOSTEPS
+if /I "%c%" EQU "HELP" (echo choosing yes will let there be metal footstep sounds on all materials, otherwise there will be no footstep sounds) else (echo invalid input)
+goto :SURFACEPROPERTIES_GEN
+
+:SURFACEPROPERTIES_GEN_METAL
+echo adding surfaceproperties
+call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
+call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" "SolidMetal.StepLeft"
+goto :SOUNDSCAPES
+
+:SURFACEPROPERTIES_GEN_NOSTEPS
 echo adding surfaceproperties
 call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "

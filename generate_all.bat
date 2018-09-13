@@ -9,7 +9,7 @@ call dev\generators\models_null.bat dev\lists\nohats.txt
 call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
 
 :: generate_model_removal
-call dev\generators\models_null.bat dev\lists\modelremoval.txt
+call dev\generators\models_null.bat dev\lists\shell_removal.txt
 
 :: generate_scripts
 call dev\generators\scripts_copy.bat extra_models.txt

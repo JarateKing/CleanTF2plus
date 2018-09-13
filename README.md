@@ -1,5 +1,13 @@
 # CleanTF2plus
 
+## Features
+
+CleanTF2+ makes use of batch files to generate mods for you. Being automatically generated means that it:
+- stays updated easier
+- allows for options to enable or disable
+- functions offline
+- can be tailored to individual needs
+
 ## Install
 
 1. Download zip

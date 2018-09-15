@@ -1,0 +1,11 @@
+materials\glass\combineglass001a.vmt
+materials\metal\metalwall076a.vmt
+materials\tile\tilefloor021a_normal.vmt
+materials\tile\tilewall005a_normal.vmt
+materials\detail\metal_detail_01.vmt
+materials\glass\combineglass001a_mask.vmt
+materials\glass\glasswindow070c.vmt
+materials\glass\glasswindow070c_mask.vmt
+materials\metal\metalwall020a.vmt
+materials\tile\tilefloor020a.vmt
+materials\tile\tilewall005a.vmt

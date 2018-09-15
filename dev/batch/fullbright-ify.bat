@@ -1,0 +1,1 @@
+dev\fart.exe %1 LightmappedGeneric UnlitGeneric

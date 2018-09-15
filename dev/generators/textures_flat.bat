@@ -11,7 +11,7 @@ for /F "tokens=*" %%A in (%1) do (
 		)
 	) || (
 		mkdir %%A
-		dev\HLExtract.exe -p "../../tf2_textures_dir.vpk" -d %%A\..\ -e %%A -m -v -s
+		dev\HLExtract.exe -p %2 -d %%A\..\ -e %%A -m -v -s
 		for %%f in (%%A\*.vtf) do call dev\batch\vtf-to-tga.bat %%f
 		for %%f in (%%A\*.tga) do (
 			call dev\batch\average-color.bat %%f

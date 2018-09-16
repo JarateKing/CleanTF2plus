@@ -1,1 +1,1 @@
-dev\fart.exe %1 LightmappedGeneric UnlitGeneric
+dev\fart.exe -i %1 "LightmappedGeneric" "UnlitGeneric"

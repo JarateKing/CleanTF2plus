@@ -3,6 +3,7 @@ for /F "tokens=*" %%A in (%1) do (
 		mkdir %%A\..\
 		dev\HLExtract.exe -p %2 -d %%A\..\ -e %%A -m -v -s
 		call dev\batch\fullbright-ify.bat %%A
+		echo done %%A
 	) || (
 		mkdir %%A
 		dev\HLExtract.exe -p %2 -d %%A\..\ -e %%A -m -v -s

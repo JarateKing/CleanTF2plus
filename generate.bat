@@ -92,13 +92,25 @@ goto :SOUNDSCAPES
 :SOUNDSCAPES
 set /P c=would you like to remove soundscapes? Y/N/Help     
 if /I "%c%" EQU "Y" goto :SOUNDSCAPES_GEN
-if /I "%c%" EQU "N" goto :END
+if /I "%c%" EQU "N" goto :MTP
 if /I "%c%" EQU "HELP" (echo this removes many world sounds from maps) else (echo invalid input)
 goto :SOUNDSCAPES
 
 :SOUNDSCAPES_GEN
 echo removing soundscapes
 call dev\generators\scripts_copy.bat soundscapes_manifest.txt scripts
+goto :MTP
+
+:MTP
+set /P c=would you like to add mtp.cfg? Y/N/Help     
+if /I "%c%" EQU "Y" goto :MTP_GEN
+if /I "%c%" EQU "N" goto :END
+if /I "%c%" EQU "HELP" (echo this sets which maps are affected by pyrovision) else (echo invalid input)
+goto :MTP
+
+:MTP_GEN
+echo removing soundscapes
+call dev\generators\scripts_copy.bat mtp.cfg cfg
 goto :END
 
 :END

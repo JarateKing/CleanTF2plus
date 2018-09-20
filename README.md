@@ -17,4 +17,4 @@ CleanTF2+ makes use of batch files to generate mods for you. Being automatically
 3. Run generate.bat
 4. Select the options you want
 
-* Some options can take a while to fully run, because they need to work with huge amounts of files. Taking several minutes can be expected.
+&#8203;* Some options can take a while to fully run, because they need to work with huge amounts of files. Taking several minutes can be expected.

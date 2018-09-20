@@ -1,2 +1,2 @@
-mkdir scripts
-copy dev\ref\%1 scripts\%1
+mkdir %2
+copy dev\ref\%1 %2\%1

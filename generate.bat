@@ -36,7 +36,7 @@ goto :OVERLAY
 :OVERLAY_GEN
 echo removing overlay materials
 call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
-call dev\generators\scripts_copy.bat extra_models.txt
+call dev\generators\scripts_copy.bat extra_models.txt scripts
 goto :NOHATS
 
 :NOHATS
@@ -79,13 +79,13 @@ goto :SURFACEPROPERTIES_GEN
 
 :SURFACEPROPERTIES_GEN_METAL
 echo adding surfaceproperties
-call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
+call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" "SolidMetal.StepLeft"
 goto :SOUNDSCAPES
 
 :SURFACEPROPERTIES_GEN_NOSTEPS
 echo adding surfaceproperties
-call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
+call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "
 goto :SOUNDSCAPES
 
@@ -98,7 +98,7 @@ goto :SOUNDSCAPES
 
 :SOUNDSCAPES_GEN
 echo removing soundscapes
-call dev\generators\scripts_copy.bat soundscapes_manifest.txt
+call dev\generators\scripts_copy.bat soundscapes_manifest.txt scripts
 goto :END
 
 :END

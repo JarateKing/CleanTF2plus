@@ -12,7 +12,8 @@ call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
 call dev\generators\models_null.bat dev\lists\shell_removal.txt
 
 :: generate_scripts
-call dev\generators\scripts_copy.bat extra_models.txt
-call dev\generators\scripts_copy.bat soundscapes_manifest.txt
-call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
+call dev\generators\scripts_copy.bat mtp.cfg cfg
+call dev\generators\scripts_copy.bat extra_models.txt scripts
+call dev\generators\scripts_copy.bat soundscapes_manifest.txt scripts
+call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "

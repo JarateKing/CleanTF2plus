@@ -6,4 +6,5 @@ sound/sound.cache
 materials/
 models/
 scripts/
+cfg/
 *.vpk

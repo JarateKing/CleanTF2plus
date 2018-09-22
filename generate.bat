@@ -36,7 +36,7 @@ goto :OVERLAY
 :OVERLAY_GEN
 echo removing overlay materials
 call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
-call dev\generators\scripts_copy.bat extra_models.txt
+call dev\generators\scripts_copy.bat extra_models.txt scripts
 goto :NOHATS
 
 :NOHATS
@@ -79,26 +79,38 @@ goto :SURFACEPROPERTIES_GEN
 
 :SURFACEPROPERTIES_GEN_METAL
 echo adding surfaceproperties
-call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
+call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" "SolidMetal.StepLeft"
 goto :SOUNDSCAPES
 
 :SURFACEPROPERTIES_GEN_NOSTEPS
 echo adding surfaceproperties
-call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt
+call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
 call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "
 goto :SOUNDSCAPES
 
 :SOUNDSCAPES
 set /P c=would you like to remove soundscapes? Y/N/Help     
 if /I "%c%" EQU "Y" goto :SOUNDSCAPES_GEN
-if /I "%c%" EQU "N" goto :END
+if /I "%c%" EQU "N" goto :MTP
 if /I "%c%" EQU "HELP" (echo this removes many world sounds from maps) else (echo invalid input)
 goto :SOUNDSCAPES
 
 :SOUNDSCAPES_GEN
 echo removing soundscapes
-call dev\generators\scripts_copy.bat soundscapes_manifest.txt
+call dev\generators\scripts_copy.bat soundscapes_manifest.txt scripts
+goto :MTP
+
+:MTP
+set /P c=would you like to add mtp.cfg? Y/N/Help     
+if /I "%c%" EQU "Y" goto :MTP_GEN
+if /I "%c%" EQU "N" goto :END
+if /I "%c%" EQU "HELP" (echo this sets which maps are affected by pyrovision) else (echo invalid input)
+goto :MTP
+
+:MTP_GEN
+echo removing soundscapes
+call dev\generators\scripts_copy.bat mtp.cfg cfg
 goto :END
 
 :END

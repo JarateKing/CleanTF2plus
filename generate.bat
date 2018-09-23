@@ -1,5 +1,13 @@
 @ECHO OFF
 
+set "flat=0"
+set "overlay=0"
+set "nohats=0"
+set "shells=0"
+set "surfaceproperties=0"
+set "soundscapes=0"
+set "mtp=0"
+
 :FLAT
 set /P c=would you like flat materials? Y/N/Help     
 if /I "%c%" EQU "Y" goto :FLAT_GEN
@@ -15,15 +23,11 @@ if /I "%c%" EQU "HELP" (echo resized flat textures causes grainyness on sv_pure,
 goto :FLAT_GEN
 
 :FLAT_GEN_STANDARD
-echo generating flat textures
-call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk"
-call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk"
+set "flat=1"
 goto :OVERLAY
 
 :FLAT_GEN_RESIZED
-echo generating flat textures
-call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk" 1
-call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk" 1
+set "flat=2"
 goto :OVERLAY
 
 :OVERLAY
@@ -34,9 +38,7 @@ if /I "%c%" EQU "HELP" (echo this removes materials that get overlayed on the wo
 goto :OVERLAY
 
 :OVERLAY_GEN
-echo removing overlay materials
-call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
-call dev\generators\scripts_copy.bat extra_models.txt scripts
+set "overlay=1"
 goto :NOHATS
 
 :NOHATS
@@ -47,8 +49,7 @@ if /I "%c%" EQU "HELP" (echo this removes all hats and cosmetics from players) e
 goto :NOHATS
 
 :NOHATS_GEN
-echo removing hats
-call dev\generators\models_null.bat dev\lists\nohats.txt
+set "nohats=1"
 goto :SHELLS
 
 :SHELLS
@@ -59,8 +60,7 @@ if /I "%c%" EQU "HELP" (echo this removes the shells that are ejected from some 
 goto :MODELS
 
 :SHELLS_GEN
-echo removing shell models
-call dev\generators\models_null.bat dev\lists\shell_removal.txt
+set "shells=1"
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES
@@ -78,15 +78,11 @@ if /I "%c%" EQU "HELP" (echo choosing yes will let there be metal footstep sound
 goto :SURFACEPROPERTIES_GEN
 
 :SURFACEPROPERTIES_GEN_METAL
-echo adding surfaceproperties
-call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
-call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" "SolidMetal.StepLeft"
+set "surfaceproperties=1"
 goto :SOUNDSCAPES
 
 :SURFACEPROPERTIES_GEN_NOSTEPS
-echo adding surfaceproperties
-call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
-call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "
+set "surfaceproperties=2"
 goto :SOUNDSCAPES
 
 :SOUNDSCAPES
@@ -97,8 +93,7 @@ if /I "%c%" EQU "HELP" (echo this removes many world sounds from maps) else (ech
 goto :SOUNDSCAPES
 
 :SOUNDSCAPES_GEN
-echo removing soundscapes
-call dev\generators\scripts_copy.bat soundscapes_manifest.txt scripts
+set "soundscapes=1"
 goto :MTP
 
 :MTP
@@ -109,10 +104,50 @@ if /I "%c%" EQU "HELP" (echo this sets which maps are affected by pyrovision) el
 goto :MTP
 
 :MTP_GEN
-echo removing soundscapes
-call dev\generators\scripts_copy.bat mtp.cfg cfg
+set "mtp=1"
 goto :END
 
 :END
+if %flat% EQU 1 (
+	echo generating flat textures
+	call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk"
+	call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk"
+	)
+if %flat% EQU 2 (
+	echo generating flat textures
+	call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk" 1
+	call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk" 1
+	)
+if %overlay% EQU 1 (
+	echo removing overlay materials
+	call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt
+	call dev\generators\scripts_copy.bat extra_models.txt scripts
+)
+if %nohats% EQU 1 (
+	echo removing hats
+	call dev\generators\models_null.bat dev\lists\nohats.txt
+)
+if %shells% EQU 1 (
+	echo removing shell models
+	call dev\generators\models_null.bat dev\lists\shell_removal.txt
+)
+if %surfaceproperties% EQU 1 (
+	echo adding surfaceproperties
+	call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
+	call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" "SolidMetal.StepLeft"
+)
+if %surfaceproperties% EQU 2 (
+	echo adding surfaceproperties
+	call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts
+	call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " "
+)
+if %soundscapes% EQU 1 (
+	echo removing soundscapes
+	call dev\generators\scripts_copy.bat soundscapes_manifest.txt scripts
+)
+if %mtp% EQU 1 (
+	echo removing soundscapes
+	call dev\generators\scripts_copy.bat mtp.cfg cfg
+)
 echo thank you for using Clean TF2+
 pause

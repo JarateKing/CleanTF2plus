@@ -57,7 +57,7 @@ set /P c=would you like to remove shells from guns? Y/N/Help
 if /I "%c%" EQU "Y" goto :SHELLS_GEN
 if /I "%c%" EQU "N" goto :SURFACEPROPERTIES
 if /I "%c%" EQU "HELP" (echo this removes the shells that are ejected from some guns) else (echo invalid input)
-goto :MODELS
+goto :SHELLS
 
 :SHELLS_GEN
 set "shells=1"

@@ -1,2 +1,2 @@
-models\player\gibs
-models\bots\gibs
+models/player/gibs
+models/bots/gibs

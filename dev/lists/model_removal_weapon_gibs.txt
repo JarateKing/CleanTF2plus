@@ -20,3 +20,11 @@ models\weapons\w_models\w_stickybomb_gib5.dx80.vtx
 models\weapons\w_models\w_stickybomb_gib5.dx90.vtx
 models\weapons\w_models\w_stickybomb_gib6.dx80.vtx
 models\weapons\w_models\w_stickybomb_gib6.dx90.vtx
+models\buildables\gibs\sapper_gib001.dx80.vtx
+models\buildables\gibs\sapper_gib001.dx90.vtx
+models\buildables\gibs\sapper_gib002.dx80.vtx
+models\buildables\gibs\sapper_gib002.dx90.vtx
+models\buildables\gibs\sd_sapper_gib001.dx80.vtx
+models\buildables\gibs\sd_sapper_gib001.dx90.vtx
+models\buildables\gibs\sd_sapper_gib002.dx80.vtx
+models\buildables\gibs\sd_sapper_gib002.dx90.vtx

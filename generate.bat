@@ -3,7 +3,9 @@
 set "flat=0"
 set "overlay=0"
 set "nohats=0"
+set "playergibs=0"
 set "shells=0"
+set "weapongibs=0"
 set "surfaceproperties=0"
 set "soundscapes=0"
 set "mtp=0"
@@ -44,23 +46,45 @@ goto :NOHATS
 :NOHATS
 set /P c=would you like to remove hats? Y/N/Help     
 if /I "%c%" EQU "Y" goto :NOHATS_GEN
-if /I "%c%" EQU "N" goto :SHELLS
+if /I "%c%" EQU "N" goto :PLAYERGIBS
 if /I "%c%" EQU "HELP" (echo this removes all hats and cosmetics from players) else (echo invalid input)
 goto :NOHATS
 
 :NOHATS_GEN
 set "nohats=1"
+goto :PLAYERGIBS
+
+:PLAYERGIBS
+set /P c=would you like to remove player gibs? Y/N/Help     
+if /I "%c%" EQU "Y" goto :PLAYERGIBS_GEN
+if /I "%c%" EQU "N" goto :SHELLS
+if /I "%c%" EQU "HELP" (echo this removes the flying body parts when people explode) else (echo invalid input)
+goto :PLAYERGIBS
+
+:PLAYERGIBS_GEN
+set "playergibs=1"
 goto :SHELLS
 
 :SHELLS
 set /P c=would you like to remove shells from guns? Y/N/Help     
 if /I "%c%" EQU "Y" goto :SHELLS_GEN
-if /I "%c%" EQU "N" goto :SURFACEPROPERTIES
+if /I "%c%" EQU "N" goto :WEAPONGIBS
 if /I "%c%" EQU "HELP" (echo this removes the shells that are ejected from some guns) else (echo invalid input)
 goto :SHELLS
 
 :SHELLS_GEN
 set "shells=1"
+goto :WEAPONGIBS
+
+:WEAPONGIBS
+set /P c=would you like to weapon gibs? Y/N/Help     
+if /I "%c%" EQU "Y" goto :WEAPONGIBS_GEN
+if /I "%c%" EQU "N" goto :SURFACEPROPERTIES
+if /I "%c%" EQU "HELP" (echo this removes some gibs certain weapon projectiles) else (echo invalid input)
+goto :WEAPONGIBS
+
+:WEAPONGIBS_GEN
+set "weapongibs=1"
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES
@@ -127,9 +151,17 @@ if %nohats% EQU 1 (
 	echo removing hats
 	call dev\generators\models_null.bat dev\lists\nohats.txt
 )
+if %playergibs% EQU 1 (
+	echo removing player gibs
+	call dev\generators\models_null.bat dev\lists\model_removal_gibs_player.txt
+)
 if %shells% EQU 1 (
 	echo removing shell models
 	call dev\generators\models_null.bat dev\lists\model_removal_shells.txt
+)
+if %weapongibs% EQU 1 (
+	echo removing weapon gibs
+	call dev\generators\models_null.bat dev\lists\model_removal_gibs_weapons.txt
 )
 if %surfaceproperties% EQU 1 (
 	echo adding surfaceproperties

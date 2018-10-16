@@ -129,7 +129,7 @@ if %nohats% EQU 1 (
 )
 if %shells% EQU 1 (
 	echo removing shell models
-	call dev\generators\models_null.bat dev\lists\shell_removal.txt
+	call dev\generators\models_null.bat dev\lists\model_removal_shells.txt
 )
 if %surfaceproperties% EQU 1 (
 	echo adding surfaceproperties

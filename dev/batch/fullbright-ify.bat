@@ -1,3 +1,4 @@
+@echo off
 dev\fart.exe -i %1 "LightmappedGeneric" "UnlitGeneric"
 :: blend textures
 dev\fart.exe -i %1 "WorldVertexTransition" "UnlitTwoTexture"

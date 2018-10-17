@@ -1,3 +1,4 @@
+@echo off
 for /F "tokens=*" %%A in (%1) do (
 	Echo.%%A | findstr /c:".">nul && (
 		mkdir %%A\..\

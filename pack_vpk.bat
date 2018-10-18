@@ -18,6 +18,10 @@ type dev\current_options.txt >> cleantf2\readme.txt
 echo creating vpk
 ..\..\..\bin\vpk.exe -M cleantf2 > nul 2> nul
 
+:: moving vpk files
+echo moving vpk files
+move cleantf2_*.vpk ..
+
 :: regenerating folder structure
 echo regenerating folder structure
 del cleantf2\readme.txt > nul 2> nul

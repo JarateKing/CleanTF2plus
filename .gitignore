@@ -1,5 +1,4 @@
 # TF2 general mod gitignore
-
 sound/sound.cache
 
 # CleanTF2plus gitignore
@@ -7,4 +6,6 @@ materials/
 models/
 scripts/
 cfg/
+cleantf2/
+dev/current_options.txt
 *.vpk

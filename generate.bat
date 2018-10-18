@@ -132,64 +132,76 @@ set "mtp=1"
 goto :END
 
 :END
+del dev\current_options.txt > nul 2> nul
 if %flat% EQU 1 (
 	echo generating flat textures
 	call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk" >nul 2> nul
 	call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk" >nul 2> nul
+	echo "flat textures (unresized)" >> dev\current_options.txt
 	echo done
 	)
 if %flat% EQU 2 (
 	echo generating flat textures
 	call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk" 1 >nul 2> nul
 	call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk" 1 >nul 2> nul
+	echo "flat textures (resized)" >> dev\current_options.txt
 	echo done
 	)
 if %overlay% EQU 1 (
 	echo removing overlay materials
 	call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt >nul 2> nul
 	call dev\generators\scripts_copy.bat extra_models.txt scripts >nul 2> nul
+	echo "no overlays" >> dev\current_options.txt
 	echo done
 )
 if %nohats% EQU 1 (
 	echo removing hats
 	call dev\generators\models_null.bat dev\lists\nohats.txt >nul 2> nul
+	echo "nohats" >> dev\current_options.txt
 	echo done
 )
 if %playergibs% EQU 1 (
 	echo removing player gibs
 	call dev\generators\models_null.bat dev\lists\model_removal_gibs_player.txt >nul 2> nul
+	echo "no player gibs" >> dev\current_options.txt
 	echo done
 )
 if %shells% EQU 1 (
 	echo removing shell models
 	call dev\generators\models_null.bat dev\lists\model_removal_shells.txt >nul 2> nul
+	echo "no shells" >> dev\current_options.txt
 	echo done
 )
 if %weapongibs% EQU 1 (
 	echo removing weapon gibs
 	call dev\generators\models_null.bat dev\lists\model_removal_gibs_weapons.txt >nul 2> nul
+	echo "no weapon gibs" >> dev\current_options.txt
 	echo done
 )
 if %surfaceproperties% EQU 1 (
 	echo adding surfaceproperties
 	call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts >nul 2> nul
 	call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" "SolidMetal.StepLeft" >nul 2> nul
+	echo "empty surface properties (metal footsteps)" >> dev\current_options.txt
 	echo done
 )
 if %surfaceproperties% EQU 2 (
 	echo adding surfaceproperties
 	call dev\generators\scripts_copy.bat surfaceproperties_manifest.txt scripts >nul 2> nul
 	call dev\generators\scripts_find_and_replace.bat surfaceproperties.txt "REPLACEME" " " >nul 2> nul
+	echo "empty surface properties (no footsteps)" >> dev\current_options.txt
 	echo done
 )
 if %soundscapes% EQU 1 (
 	echo removing soundscapes
 	call dev\generators\scripts_copy.bat soundscapes_manifest.txt scripts >nul 2> nul
+	echo "no soundscapes" >> dev\current_options.txt
 	echo done
 )
 if %mtp% EQU 1 (
 	echo removing soundscapes
 	call dev\generators\scripts_copy.bat mtp.cfg cfg >nul 2> nul
+	echo "no pyrovision textures" >> dev\current_options.txt
 	echo done
 )
 echo thank you for using Clean TF2+

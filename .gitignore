@@ -2,10 +2,12 @@
 sound/sound.cache
 
 # CleanTF2plus gitignore
+## generated folders
 materials/
 models/
 scripts/
 cfg/
+## vpk packing
 cleantf2/
 dev/current_options.txt
 *.vpk

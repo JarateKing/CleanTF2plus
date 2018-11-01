@@ -1,0 +1,2 @@
+models/player/items/demo/pegleg.dx80.vtx
+models/player/items/demo/pegleg.dx90.vtx

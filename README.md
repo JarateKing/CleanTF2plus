@@ -22,7 +22,7 @@ CleanTF2+ makes use of batch files to generate mods for you. Being automatically
 
 ## Turn into VPK
 
-VPK mods result in faster load times than mods in folders. For this reason, a utility is provided to convert CleanTF2+ into vpk files.
+Having folders inside custom makes load times slower (regardless of contents) and vpk files exist to speed up load times. For this reason, a utility is provided to convert CleanTF2+ into vpk files.
 
 When you have fully generated the options you wanted:
 1. Run pack_vpk.bat

@@ -51,7 +51,18 @@ if /I "%c%" EQU "HELP" (echo this removes all hats and cosmetics from players) e
 goto :NOHATS
 
 :NOHATS_GEN
+set /P c=would you like to keep heads and feet? Y/N/Help     
+if /I "%c%" EQU "Y" goto :NOHATS_GEN_HEADSFEET
+if /I "%c%" EQU "N" goto :NOHATS_GEN_FULL
+if /I "%c%" EQU "HELP" (echo this keeps cosmetics that replace parts of the body so they aren't invisible) else (echo invalid input)
+goto :NOHATS_GEN
+
+:NOHATS_GEN_FULL
 set "nohats=1"
+goto :PLAYERGIBS
+
+:NOHATS_GEN_HEADSFEET
+set "nohats=2"
 goto :PLAYERGIBS
 
 :PLAYERGIBS
@@ -158,6 +169,13 @@ if %nohats% EQU 1 (
 	echo removing hats
 	call dev\generators\models_null.bat dev\lists\nohats.txt >nul 2> nul
 	echo "nohats" >> dev\current_options.txt
+	echo done
+)
+if %nohats% EQU 2 (
+	echo removing hats headsfeet
+	::call dev\generators\models_null.bat dev\lists\nohats.txt >nul 2> nul
+	call dev\generators\remove.bat dev\lists\nohats_headsfeet.txt
+	echo "nohats headsfeet" >> dev\current_options.txt
 	echo done
 )
 if %playergibs% EQU 1 (

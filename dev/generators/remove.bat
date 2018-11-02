@@ -1,8 +1,8 @@
 @echo off
 for /F "tokens=*" %%A in (%1) do (
 	Echo.%%A | findstr /c:".">nul && (
-		del %%A
+		del "%%A"
 	) || (
-		rmdir /s /q %%A
+		rmdir /s /q "%%A"
 	)
 )

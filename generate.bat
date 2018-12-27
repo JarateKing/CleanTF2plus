@@ -173,7 +173,7 @@ if %nohats% EQU 1 (
 )
 if %nohats% EQU 2 (
 	echo removing hats headsfeet
-	::call dev\generators\models_null.bat dev\lists\nohats.txt >nul 2> nul
+	call dev\generators\models_null.bat dev\lists\nohats.txt >nul 2> nul
 	call dev\generators\remove.bat dev\lists\nohats_headsfeet.txt
 	echo "nohats headsfeet" >> dev\current_options.txt
 	echo done

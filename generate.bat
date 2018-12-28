@@ -13,7 +13,7 @@ set "mtp=0"
 :FLAT
 set /P c=would you like flat materials? Y/N/Help     
 if /I "%c%" EQU "Y" goto :FLAT_GEN
-if /I "%c%" EQU "N" goto :OVERLAY
+if /I "%c%" EQU "N" goto :NOHATS
 if /I "%c%" EQU "HELP" (echo flat materials make all world textures one solid color, also known as quake textures) else (echo invalid input)
 goto :FLAT
 
@@ -26,21 +26,10 @@ goto :FLAT_GEN
 
 :FLAT_GEN_STANDARD
 set "flat=1"
-goto :OVERLAY
+goto :NOHATS
 
 :FLAT_GEN_RESIZED
 set "flat=2"
-goto :OVERLAY
-
-:OVERLAY
-set /P c=would you like to remove overlay materials? Y/N/Help     
-if /I "%c%" EQU "Y" goto :OVERLAY_GEN
-if /I "%c%" EQU "N" goto :NOHATS
-if /I "%c%" EQU "HELP" (echo this removes materials that get overlayed on the world) else (echo invalid input)
-goto :OVERLAY
-
-:OVERLAY_GEN
-set "overlay=1"
 goto :NOHATS
 
 :NOHATS
@@ -150,14 +139,14 @@ if %flat% EQU 1 (
 	call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk" >nul 2> nul
 	echo "flat textures (unresized)" >> dev\current_options.txt
 	echo done
-	)
+)
 if %flat% EQU 2 (
 	echo generating flat textures
 	call dev\generators\textures_flat.bat dev\lists\flat.txt "../../tf2_textures_dir.vpk" 1 >nul 2> nul
 	call dev\generators\textures_flat.bat dev\lists\flat_hl2.txt "../../../hl2/hl2_textures_dir.vpk" 1 >nul 2> nul
 	echo "flat textures (resized)" >> dev\current_options.txt
 	echo done
-	)
+)
 if %overlay% EQU 1 (
 	echo removing overlay materials
 	call dev\generators\textures_nodraw.bat dev\lists\nodraw.txt >nul 2> nul

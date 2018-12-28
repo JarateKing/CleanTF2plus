@@ -23,7 +23,6 @@ CleanTF2+ makes use of batch files to generate mods for you. Being automatically
 ## Options
 
 - Flat textures: makes all textures appear as a solid color.
-- Overlay Removal: removes some unnecessary overlays that appear on the map.
 - Nohats: removes all hats and cosmetic items.
 - No Playergibs: removes all gibs that come from players exploding.
 - No Shells: removes all shell models ejected from guns.

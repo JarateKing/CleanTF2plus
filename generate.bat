@@ -77,10 +77,10 @@ set "shells=1"
 goto :WEAPONGIBS
 
 :WEAPONGIBS
-set /P c=would you like to weapon gibs? Y/N/Help     
+set /P c=would you like to remove weapon gibs? Y/N/Help     
 if /I "%c%" EQU "Y" goto :WEAPONGIBS_GEN
 if /I "%c%" EQU "N" goto :SURFACEPROPERTIES
-if /I "%c%" EQU "HELP" (echo this removes some gibs certain weapon projectiles) else (echo invalid input)
+if /I "%c%" EQU "HELP" (echo this removes some gibs from certain projectiles) else (echo invalid input)
 goto :WEAPONGIBS
 
 :WEAPONGIBS_GEN

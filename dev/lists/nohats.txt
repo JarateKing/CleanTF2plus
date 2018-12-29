@@ -19,6 +19,15 @@ models/workshop/player/items/sniper
 models/workshop/player/items/soldier
 models/workshop/player/items/spy
 models/workshop_partner/player/items/all_class
+models/workshop_partner/player/items/demo
+models/workshop_partner/player/items/engineer
+models/workshop_partner/player/items/heavy
+models/workshop_partner/player/items/medic
+models/workshop_partner/player/items/pyro
+models/workshop_partner/player/items/scout
+models/workshop_partner/player/items/sniper
+models/workshop_partner/player/items/soldier
+models/workshop_partner/player/items/spy
 models/player/items/mvm_loot
 models/bots/boss_bot/carrier_parts.dx80.vtx
 models/bots/boss_bot/carrier_parts.dx90.vtx

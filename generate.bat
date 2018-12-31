@@ -1,7 +1,7 @@
 @ECHO OFF
 
+:: used variables
 set "flat=0"
-set "overlay=0"
 set "nohats=0"
 set "playergibs=0"
 set "shells=0"
@@ -9,6 +9,11 @@ set "weapongibs=0"
 set "surfaceproperties=0"
 set "soundscapes=0"
 set "mtp=0"
+
+:: obsolete variables
+:: kept in case people want to manually enable them
+:: but this file will not directly ask for them
+set "overlay=0"
 
 :FLAT
 set /P c=would you like flat materials? Y/N/Help     

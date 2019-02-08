@@ -20,6 +20,8 @@ CleanTF2+ makes use of batch files to generate mods for you. Being automatically
 
 &#8203;* Some options can take a while to fully run, because they need to work with huge amounts of files. Taking several minutes can be expected.
 
+If you run into issues installing, check out [troubleshooting](TROUBLESHOOTING.md).
+
 ## Options
 
 - Flat textures: makes all textures appear as a solid color.

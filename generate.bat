@@ -1,6 +1,9 @@
 @ECHO OFF
 
+:: DATA
+
 :: used variables
+:: these are set through questions
 set "flat=0"
 set "nohats=0"
 set "playergibs=0"
@@ -11,9 +14,10 @@ set "soundscapes=0"
 set "mtp=0"
 
 :: obsolete variables
-:: kept in case people want to manually enable them
-:: but this file will not directly ask for them
+:: to manually enable, set to 1
 set "overlay=0"
+
+:: QUESTIONS
 
 :FLAT
 set /P c=would you like flat materials? Y/N/Help     
@@ -135,6 +139,8 @@ goto :MTP
 :MTP_GEN
 set "mtp=1"
 goto :END
+
+:: GENERATION
 
 :END
 del dev\current_options.txt > nul 2> nul

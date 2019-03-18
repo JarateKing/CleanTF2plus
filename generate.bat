@@ -16,6 +16,7 @@ set "mtp=0"
 :: obsolete variables
 :: to manually enable, set to 1
 set "overlay=0"
+set "fullbright=0"
 
 :: QUESTIONS
 
@@ -220,6 +221,13 @@ if %mtp% EQU 1 (
 	echo removing soundscapes
 	call dev\generators\scripts_copy.bat mtp.cfg cfg >nul 2> nul
 	echo "no pyrovision textures" >> dev\current_options.txt
+	echo done
+)
+if %fullbright% EQU 1 (
+	echo applying fullbright
+	call dev\generators\materials_fullbright.bat dev\lists\fullbright.txt "../../tf2_misc_dir.vpk" >nul 2> nul
+	call dev\generators\materials_fullbright.bat dev\lists\fullbright_hl2.txt "../../../hl2/hl2_misc_dir.vpk" >nul 2> nul
+	echo "fullbright" >> dev\current_options.txt
 	echo done
 )
 echo thank you for using Clean TF2+

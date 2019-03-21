@@ -2,11 +2,13 @@
 
 :: VALIDITY CHECKING
 
+:: check whether these exist
 IF NOT EXIST "..\..\tf2_misc_dir.vpk" (goto :ERR_MISSING_MISC_DIR)
 IF NOT EXIST "..\..\tf2_textures_dir.vpk" (goto :ERR_MISSING_TEX_DIR)
 IF NOT EXIST "..\..\..\hl2\hl2_textures_dir.vpk" (goto :ERR_MISSING_HL2_DIR)
 
-goto :FLAT
+:: skip past all the error messages if they do exist
+goto :NO_ERRORS
 
 :ERR_MISSING_MISC_DIR
 echo Error: unable to find tf_misc_dir.vpk. Are you sure CleanTF2plus is inside the custom folder?
@@ -19,6 +21,8 @@ goto :DONE
 :ERR_MISSING_HL2_DIR
 echo Error: unable to find hl2 vpk's. Make sure you're not using symbolic links that prevent access to the hl2 folder, and that CleanTF2plus is inside the custom folder.
 goto :DONE
+
+:NO_ERRORS
 
 :: DATA
 

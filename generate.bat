@@ -216,26 +216,26 @@ if %nohats% EQU 1 (
 )
 if %nohats% EQU 2 (
 	echo removing hats headsfeet
-	call dev\generators\models_null.bat dev\lists\nohats.txt
+	call dev\generators\models_null.bat dev\lists\nohats.txt "../../../bin/vpk.exe" "../../tf2_misc_dir.vpk"
 	call dev\generators\remove.bat dev\lists\nohats_headsfeet.txt
 	echo "nohats headsfeet" >> dev\current_options.txt
 	echo done
 )
 if %playergibs% EQU 1 (
 	echo removing player gibs
-	call dev\generators\models_null.bat dev\lists\model_removal_gibs_player.txt
+	call dev\generators\models_null.bat dev\lists\model_removal_gibs_player.txt "../../../bin/vpk.exe" "../../tf2_misc_dir.vpk"
 	echo "no player gibs" >> dev\current_options.txt
 	echo done
 )
 if %shells% EQU 1 (
 	echo removing shell models
-	call dev\generators\models_null.bat dev\lists\model_removal_shells.txt
+	call dev\generators\models_null.bat dev\lists\model_removal_shells.txt "../../../bin/vpk.exe" "../../tf2_misc_dir.vpk"
 	echo "no shells" >> dev\current_options.txt
 	echo done
 )
 if %weapongibs% EQU 1 (
 	echo removing weapon gibs
-	call dev\generators\models_null.bat dev\lists\model_removal_gibs_weapons.txt
+	call dev\generators\models_null.bat dev\lists\model_removal_gibs_weapons.txt "../../../bin/vpk.exe" "../../tf2_misc_dir.vpk"
 	echo "no weapon gibs" >> dev\current_options.txt
 	echo done
 )

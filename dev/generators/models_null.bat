@@ -1,16 +1,18 @@
 @echo off
 for /F "tokens=*" %%A in (%1) do (
 	Echo.%%A | findstr /c:".">nul && (
-		mkdir %%A\..\
-		copy dev\ref\null.vtx %%A
+		mkdir %%A\..\ >nul 2>nul
+		echo removing model %%A
+		copy dev\ref\null.vtx %%A >nul 2>nul
 	) || (
 		"../../../bin/vpk.exe" l "../../tf2_misc_dir.vpk" | findstr "%%A" | findstr ".vtx" | findstr /V ".sw.vtx" > vpk_list.txt
 	
+		echo removing models in %%A
 		for /F "tokens=*" %%F in (vpk_list.txt) do (
-			mkdir "%%F\..\"
-			copy dev\ref\null.vtx "%%F"
+			mkdir "%%F\..\" >nul 2>nul
+			copy dev\ref\null.vtx "%%F" >nul 2>nul
 		)
 		
-		del vpk_list.txt
+		del vpk_list.txt >nul 2>nul
 	)
 )

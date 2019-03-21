@@ -8,6 +8,15 @@ IF NOT EXIST "..\..\tf2_textures_dir.vpk" (goto :ERR_MISSING_TEX_DIR)
 IF NOT EXIST "..\..\..\hl2\hl2_textures_dir.vpk" (goto :ERR_MISSING_HL2_DIR)
 IF NOT EXIST "..\..\..\bin\vpk.exe" (goto :ERR_MISSING_VPK_EXE)
 
+:: check very odd case
+set "testerrorvar=0"
+goto :SKIP_TESTERRORVAR
+set "testerrorvar=1"
+:SKIP_TESTERRORVAR
+if %testerrorvar% EQU 1 (
+	goto :WARN_OPTION_SELECT
+)
+
 :: skip past all the error messages if they do exist
 goto :NO_ERRORS
 
@@ -26,6 +35,10 @@ goto :DONE
 :ERR_MISSING_VPK_EXE
 echo Error: unable to find bin/vpk.exe. Make sure you're not using symbolic links that prevent access to the bin folder, and that CleanTF2plus is inside the custom folder.
 goto :DONE
+
+:WARN_OPTION_SELECT
+echo Warning: potential issue with option selections detected. This may result in options you said no to still getting generated. Proceed with caution.
+goto :NO_ERRORS
 
 :NO_ERRORS
 

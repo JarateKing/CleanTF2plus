@@ -1,5 +1,15 @@
 @ECHO OFF
 
+:: VALIDITY CHECKING
+
+IF NOT EXIST "..\..\tf2_misc_dir.vpk" (goto :ERR_MISSING_MISC_DIR)
+
+goto :FLAT
+
+:ERR_MISSING_MISC_DIR
+echo Error: unable to find tf_misc_dir.vpk. Are you sure CleanTF2plus is inside the custom folder?
+goto :DONE
+
 :: DATA
 
 :: used variables
@@ -230,5 +240,7 @@ if %fullbright% EQU 1 (
 	echo "fullbright" >> dev\current_options.txt
 	echo done
 )
+
+:DONE
 echo thank you for using Clean TF2+
 pause

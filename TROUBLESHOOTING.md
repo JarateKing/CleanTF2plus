@@ -24,6 +24,12 @@ This is a potential issue with running batch files on your computer, most likely
 
 This is the result of resized flat textures on sv_pure -- it's the original image, except resized down from 512x512 to 1x1 (if you look closely, the 'line' effect is actually just very small textures). The fix for this is to not use the resized option, so that the original size is preserved with the flat textures. This is a tradeoff between returning to default textures in sv_pure 1 or 2, but having a much larger filesize.
 
+## Black Textures
+
+> When I enable flat textures, all textures are completely black
+
+This is likely a result of the imagemagick executables not working properly. Reinstalls may fix this issue.
+
 ## Broken textures
 
 > When I enable fullbright materials, some textures appear fully bright, some appear completely dark, and some don't render at all

@@ -12,6 +12,12 @@ The most common cause of this is CleanTF2plus not being in the proper install di
 steam\steamapps\common\Team Fortress 2\tf\custom\CleanTF2plus
 ```
 
+## Warnings
+
+> When I run it, I get a warning saying things might not work
+
+This is a potential issue with running batch files on your computer, most likely. While (hopefully) things should generate fine, you might find things getting generated even though you never selected them. There is no current fix for this, other than deleting and removing things that were wrongly generated.
+
 ## Grainey textures
 
 > When I enable flat textures, instead of being one color they are lots of lines and grainey textures

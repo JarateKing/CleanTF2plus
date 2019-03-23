@@ -2,9 +2,9 @@
 
 You may run into issues installing and running properly. This serves as an FAQ for some common issues when installing.
 
-## Empty folders
+## Error Messages
 
-> When I run it, I get no errors, but the materials / models / etc. folders are empty
+> When I run it, I get an error message saying it was unable to find a certain vpk / exe
 
 The most common cause of this is CleanTF2plus not being in the proper install directory. It should exist in:
 

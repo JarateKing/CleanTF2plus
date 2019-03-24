@@ -1,5 +1,3 @@
-models\player\items\demo\pegleg.dx80.vtx
-models\player\items\demo\pegleg.dx90.vtx
 models\player\items\all_class\cowboyboots_demo.dx80.vtx
 models\player\items\all_class\cowboyboots_demo.dx90.vtx
 models\player\items\all_class\cowboyboots_scout.dx80.vtx

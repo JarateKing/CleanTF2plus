@@ -210,7 +210,8 @@ if %overlay% EQU 1 (
 )
 if %nohats% EQU 1 (
 	echo removing hats
-	call dev\generators\models_null.bat dev\lists\nohats.txt
+	call dev\generators\models_null.bat dev\lists\nohats.txt "../../../bin/vpk.exe" "../../tf2_misc_dir.vpk"
+	call dev\generators\remove.bat dev\lists\nohats_weapons.txt
 	echo "nohats" >> dev\current_options.txt
 	echo done
 )
@@ -218,6 +219,7 @@ if %nohats% EQU 2 (
 	echo removing hats headsfeet
 	call dev\generators\models_null.bat dev\lists\nohats.txt "../../../bin/vpk.exe" "../../tf2_misc_dir.vpk"
 	call dev\generators\remove.bat dev\lists\nohats_headsfeet.txt
+	call dev\generators\remove.bat dev\lists\nohats_weapons.txt
 	echo "nohats headsfeet" >> dev\current_options.txt
 	echo done
 )

@@ -1,3 +1,3 @@
 #!/bin/sh 
 
-wine ../VTFCmd.exe -file $1 -exportformat "tga"
+wine dev/VTFCmd.exe -file $1 -exportformat "tga"

@@ -2,6 +2,8 @@
 
 A sequel to the original Clean TF2 mod. Designed to provide mods that reduces visual clutter and increase fps.
 
+Linux version is currently a WIP.
+
 ## Features
 
 CleanTF2+ makes use of batch files to generate mods for you. Being automatically generated means that it:
@@ -15,8 +17,10 @@ CleanTF2+ makes use of batch files to generate mods for you. Being automatically
 
 1. Download zip
 2. Unzip to custom folder
-3. Run generate.bat
+3. Run generate.bat (Windows) or generate.sh (Linux)
 4. Select the options you want
+
+Linux users will need to install [imagemagick](https://imagemagick.org/index.php) and [wine](https://www.winehq.org/).
 
 &#8203;* Some options can take a while to fully run, because they need to work with huge amounts of files. Taking several minutes can be expected.
 

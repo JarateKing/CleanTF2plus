@@ -128,21 +128,10 @@ goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES
 set /P c=would you like to add surfaceproperties? Y/N/Help     
-if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN
+if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN_NOSTEPS
 if /I "%c%" EQU "N" goto :SOUNDSCAPES
 if /I "%c%" EQU "HELP" (echo this removes bullet impacts and sets all footstep sounds to be the same) else (echo invalid input)
 goto :SURFACEPROPERTIES
-
-:SURFACEPROPERTIES_GEN
-set /P c=would you want there to be footstep sounds or no sounds? Y/N/Help     
-if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN_METAL
-if /I "%c%" EQU "N" goto :SURFACEPROPERTIES_GEN_NOSTEPS
-if /I "%c%" EQU "HELP" (echo choosing yes will let there be metal footstep sounds on all materials, otherwise there will be no footstep sounds) else (echo invalid input)
-goto :SURFACEPROPERTIES_GEN
-
-:SURFACEPROPERTIES_GEN_METAL
-set "surfaceproperties=1"
-goto :SOUNDSCAPES
 
 :SURFACEPROPERTIES_GEN_NOSTEPS
 set "surfaceproperties=2"

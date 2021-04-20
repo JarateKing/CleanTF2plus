@@ -33,7 +33,7 @@ If you run into issues installing, check out [troubleshooting](TROUBLESHOOTING.m
 - No Playergibs: removes all gibs that come from players exploding.
 - No Shells: removes all shell models ejected from guns.
 - No Weapongibs: removes all gibs from certain projectiles (arrows breaking, for instance).
-- Surfaceproperties: removes all particle effects bullets hitting walls, and makes all footsteps the same.
+- Surfaceproperties: removes all particle effects bullets hitting walls and all footstep sounds
 - No Soundscapes: removes most ambient sounds on maps.
 - mtp.cfg: makes all maps become unaffected by pyrovision.
 

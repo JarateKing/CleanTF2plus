@@ -130,7 +130,7 @@ goto :SURFACEPROPERTIES
 set /P c=would you like to add surfaceproperties? Y/N/Help     
 if /I "%c%" EQU "Y" goto :SURFACEPROPERTIES_GEN_NOSTEPS
 if /I "%c%" EQU "N" goto :SOUNDSCAPES
-if /I "%c%" EQU "HELP" (echo this removes bullet impacts and sets all footstep sounds to be the same) else (echo invalid input)
+if /I "%c%" EQU "HELP" (echo this removes bullet impacts and gets rid of footstep sounds) else (echo invalid input)
 goto :SURFACEPROPERTIES
 
 :SURFACEPROPERTIES_GEN_NOSTEPS

@@ -238,7 +238,7 @@ if %soundscapes% EQU 1 (
 	echo done
 )
 if %mtp% EQU 1 (
-	echo removing soundscapes
+	echo adding mtp.cfg
 	call dev\generators\scripts_copy.bat mtp.cfg cfg
 	echo "no pyrovision textures" >> dev\current_options.txt
 	echo done

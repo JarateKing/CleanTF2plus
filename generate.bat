@@ -60,7 +60,7 @@ goto :FLAT
 set /P c=would you like flat textures resized? Y/N/Help     
 if /I "%c%" EQU "Y" goto :FLAT_GEN_RESIZED
 if /I "%c%" EQU "N" goto :FLAT_GEN_STANDARD
-if /I "%c%" EQU "HELP" (echo resized flat textures causes grainyness on sv_pure, non-resized appears as stock tf2 textures) else (echo invalid input)
+if /I "%c%" EQU "HELP" (echo resized flat textures appear mostly flat on sv_pure, non-resized appears as stock tf2 textures) else (echo invalid input)
 goto :FLAT_GEN
 
 :FLAT_GEN_STANDARD

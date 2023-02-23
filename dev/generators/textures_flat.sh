@@ -5,7 +5,7 @@ for line in $(cat $1); do
 		*.*)
 			DIR=$(dirname "$line")
 			mkdir -p $DIR
-			wine dev/HLExtract.exe -p $2 -d $line/../ -e $line -m -v -s
+			dev/HLExtract.sh -p $2 -d $line/../ -e $line -m -v -s
 			dev/batch/vtf-to-tga.sh $line
 			for file in $DIR/*.tga; do
 				dev/batch/average-color.sh $file
@@ -17,7 +17,7 @@ for line in $(cat $1); do
 		;;
 		*)
 			mkdir -p $line
-			wine dev/HLExtract.exe -p $2 -d $line/../ -e $line -m -v -s
+			dev/linux/HLExtract.sh -p $2 -d $line/../ -e $line -m -v -s
 			for file in $line/*.vtf; do
 				dev/batch/vtf-to-tga.sh $file
 			done

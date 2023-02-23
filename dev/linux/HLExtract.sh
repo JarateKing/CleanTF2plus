@@ -1,3 +1,4 @@
 #!/bin/bash
 
-LD_LIBRARY_PATH=./lib ./HLExtract $*
+PATH=$(dirname $0)
+LD_LIBRARY_PATH="$PATH/lib" "$PATH/HLExtract" $*

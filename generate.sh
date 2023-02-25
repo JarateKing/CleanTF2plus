@@ -240,5 +240,62 @@ elif [ $flat == 2 ]; then
         echo flat textures \(resized\) >> dev/current_options.txt
         echo done
 fi
+if [ $nohats == 1 ]; then
+	echo removing hats
+	dev/generators/models_null.sh dev/lists/linux/nohats.txt "dev/linux/vpk.sh" "../../tf2_misc_dir.vpk"
+	dev/generators/remove.sh dev/lists/linux/nohats_weapons.txt
+	echo nohats >> dev/current_options.txt
+	echo done
+elif [ $nohats == 2 ]; then
+        echo removing hats headsfeet
+        dev/generators/models_null.sh dev/lists/linux/nohats.txt "dev/linux/vpk.sh" "../../tf2_misc_dir.vpk"
+	dev/generators/remove.sh dev/lists/linux/nohats_headsfeet.txt
+        dev/generators/remove.sh dev/lists/linux/nohats_weapons.txt
+        echo nohats headsfeet >> dev/current_options.txt
+        echo done
+fi
+if [ $playergibs == 1 ]; then
+	echo removing player gibs
+	dev/generators/models_null.sh dev/lists/linux/model_removal_gibs_player.txt "dev/linux/vpk.sh" "../../tf2_misc_dir.vpk"
+	echo no player gibs >> dev/current_options.txt
+	echo done
+fi
+if [ $shells == 1 ]; then
+	echo removing shell models
+	dev/generators/models_null.sh dev/lists/linux/model_removal_shells.txt "dev/linux/vpk.sh" "../../tf2_misc_dir.vpk"
+	echo no shells >> dev/current_options.txt
+	echo done
+fi
+if [ $weapongibs == 1 ]; then
+	echo removing weapon gibs
+	dev/generators/models_null.sh dev/lists/linux/model_removal_gibs_weapons.txt "dev/linux/vpk.sh" "../../tf2_misc_dir.vpk"
+	echo no weapon gibs >> dev/current_options.txt
+	echo done
+fi
+if [ $surfaceproperties == 1 ]; then
+	echo adding surfaceproperties
+	dev/generators/scripts_copy.sh surfaceproperties_manifest.txt scripts
+	dev/generators/scripts_find_and_replace.sh surfaceproperties.txt "REPLACEME" "SolidMetal.StepLeft"
+	echo empty surface properties \(metal footseteps\) >> dev/current_options.txt
+	echo done
+elif [ $surfaceproperties == 2 ]; then
+        echo adding surfaceproperties
+        dev/generators/scripts_copy.sh surfaceproperties_manifest.txt scripts
+        dev/generators/scripts_find_and_replace.sh surfaceproperties.txt "REPLACEME" " "
+        echo empty surface properties \(no footseteps\) >> dev/current_options.txt
+        echo done
+fi
+if [ $soundscapes == 1 ]; then
+	echo removing soundscapes
+	dev/generators/scripts_copy.sh soundscapes_manifest.txt scripts
+	echo no soundscapes >> dev/current_options.txt
+	echo done
+fi
+if [ $mtp == 1 ]; then
+	echo adding mtp.cfg
+	dev/generators/scripts_copy.sh mtp.cfg cfg
+	echo no pyrovision textures >> dev/current_options.txt
+	echo done
+fi
 
 echo thank you for using Clean TF2+

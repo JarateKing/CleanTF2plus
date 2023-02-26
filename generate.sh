@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo THIS IS A WIP
-
 # VALIDITY CHECKING
 
 # check wether these exist

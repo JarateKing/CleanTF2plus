@@ -2,8 +2,6 @@
 
 A sequel to the original Clean TF2 mod. Designed to provide mods that reduces visual clutter and increase fps.
 
-Linux version is currently a WIP.
-
 ## Features
 
 CleanTF2+ makes use of batch files to generate mods for you. Being automatically generated means that it:

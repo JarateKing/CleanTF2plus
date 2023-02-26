@@ -226,7 +226,7 @@ FLAT
 
 # GENERATION
 
-rm dev/current_options.txt
+rm dev/current_options.txt > /dev/null 2>&1
 if [ $flat == 1 ]; then
 	echo generating flat textures
 	dev/generators/textures_flat.sh dev/lists/linux/flat.txt "../../tf2_textures_dir.vpk"

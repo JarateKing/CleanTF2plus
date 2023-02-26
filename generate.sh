@@ -19,7 +19,7 @@ if ! test -f "../../../hl2/hl2_textures_dir.vpk"; then
 	exit 1
 fi
 if ! test -f "../../../bin/vpk_linux32"; then
-	echo Error: unable to find bin/vpk.exe. Make sure you\'re not using symbolic links that prevent access to the bin folder, and that CleanTF2plus is inside the custom folder.
+	echo Error: unable to find bin/vpk_linux32. Make sure you\'re not using symbolic links that prevent access to the bin folder, and that CleanTF2plus is inside the custom folder.
 	exit 1
 fi
 

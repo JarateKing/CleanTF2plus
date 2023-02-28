@@ -2,8 +2,6 @@
 
 A sequel to the original Clean TF2 mod. Designed to provide mods that reduces visual clutter and increase fps.
 
-Linux version is currently a WIP.
-
 ## Features
 
 CleanTF2+ makes use of batch files to generate mods for you. Being automatically generated means that it:
@@ -42,5 +40,5 @@ If you run into issues installing, check out [troubleshooting](TROUBLESHOOTING.m
 Having folders inside custom makes load times slower (regardless of contents) and vpk files exist to speed up load times. For this reason, a utility is provided to convert CleanTF2+ into vpk files.
 
 When you have fully generated the options you wanted:
-1. Run pack_vpk.bat
+1. Run pack_vpk.bat (windows) or pack_vpk.sh (linux)
 2. Move/delete CleanTF2plus folder out of custom (otherwise there is no load time benefit)

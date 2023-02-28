@@ -53,6 +53,7 @@ MTP()
 		echo
         elif [ $choice == "HELP" ]; then
                 echo this sets which maps are affected by pyrovision
+		MTP
         else      
                 echo invalid input
 		MTP
@@ -61,7 +62,7 @@ MTP()
 
 SOUNDSCAPES()
 {
-        echo would you like to remove soundscapes? Y/N/Help
+        echo would you like to remove soundscapes? Y/N/HELP
         read choice
         
         if [ $choice == "Y" ]; then
@@ -71,6 +72,7 @@ SOUNDSCAPES()
 		MTP
         elif [ $choice == "HELP" ]; then
                 echo this removes many world sounds from maps
+		SOUNDSCAPES
         else      
                 echo invalid input
 		SOUNDSCAPES
@@ -89,6 +91,7 @@ SURFACEPROPERTIES()
 		SOUNDSCAPES
         elif [ $choice == "HELP" ]; then
                 echo this removes bullet impacts and gets rid of footstep sounds
+		SURFACEPROPERTIES
         else      
                 echo invalid input
                 SURFACEPROPERTIES
@@ -107,6 +110,7 @@ WEAPONGIBS()
 		SURFACEPROPERTIES
         elif [ $choice == "HELP" ]; then
                 echo this removes some gibs from certain projectiles
+		WEAPONGIBS
         else      
                 echo invalid input
                 WEAPONGIBS
@@ -125,6 +129,7 @@ SHELLS()
                 WEAPONGIBS
         elif [ $choice == "HELP" ]; then
                 echo this removes the shells that are ejected from some guns
+		SHELLS
         else      
                 echo invalid input
                 SHELLS
@@ -143,6 +148,7 @@ PLAYERGIBS()
                 SHELLS
         elif [ $choice == "HELP" ]; then
                 echo this removes the flying body parts when people explode
+		PLAYERGIBS
         else      
                 echo invalid input
                 PLAYERGIBS
@@ -160,6 +166,7 @@ NOHATS_GEN()
                 nohats=1
         elif [ $choice == "HELP" ]; then
                 echo this keeps cosmetics that replace parts of the body so they aren\'t invisible
+		NOHATS_GEN
         else      
                 echo invalid input
                 NOHATS_GEN
@@ -196,6 +203,7 @@ FLAT_GEN()
                 flat=1
         elif [ $choice == "HELP" ]; then
                 echo resized flat textures appear mostly flat on sv_pure, non-resized appears as stock tf2 textures
+		FLAT_GEN
         else
                 echo invalid input
                 FLAT_GEN
@@ -214,6 +222,7 @@ FLAT()
 		NOHATS
 	elif [ $choice == "HELP" ]; then
 		echo flat materials make all world textures one solid color, also known as quake textures
+		FLAT
 	else
 		echo invalid input
 		FLAT

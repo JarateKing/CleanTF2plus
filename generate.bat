@@ -251,9 +251,9 @@ if %fullbright% EQU 1 (
 	echo done
 )
 
+:DONE
 :: DELETE TGA FILES TO REDUCE VPK SIZE
 del /S materials/*.tga
 
-:DONE
 echo thank you for using Clean TF2+
 pause

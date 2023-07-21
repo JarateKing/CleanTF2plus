@@ -305,4 +305,7 @@ if [ $mtp == 1 ]; then
 	echo done
 fi
 
+# DELETE TGA FILES TO REDUCE VPK SIZE
+find materials/ -name "*.tga" -type f -delete
+
 echo thank you for using Clean TF2+
